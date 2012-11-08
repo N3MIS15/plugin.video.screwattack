@@ -90,7 +90,7 @@ def screwattack_episodes(show, page='0'):
 
 
     if content.find('li', 'pager-next').a:
-        item = xbmcgui.ListItem('More...', iconImage=icon)
+        item = xbmcgui.ListItem(addon.getLocalizedString(30010), iconImage=icon)
         item.setProperty('Fanart_Image', fanart)
 
         url = '%s?%s=%s' % (path, show, int(page)+1)
