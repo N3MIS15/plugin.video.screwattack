@@ -85,7 +85,7 @@ def screwattack_episodes(show, page='0'):
         item.setProperty('Fanart_Image', fanart)
 
         item.addContextMenuItems([(addon.getLocalizedString(39900), 'XBMC.RunPlugin(%s&download=true)' % url)])
-
+        item.setProperty('IsPlayable', 'true')
         xbmcplugin.addDirectoryItem(num, url, item, False)
 
 
@@ -136,9 +136,10 @@ def screwattack_open(url, show, title=None, img=None, download=False):
     if download:
         screwattack_download(video, title, show)
     else:
-        item = xbmcgui.ListItem(title, thumbnailImage=img)
-        item.setInfo('Video', {'Title': title.title()})
-        xbmc.Player().play(video, item)
+
+        item = xbmcgui.ListItem(label=title, thumbnailImage=img, path=video)
+        item.setInfo(type='Video', infoLabels={'Title': title.title()})
+        xbmcplugin.setResolvedUrl(handle=num, succeeded=True, listitem=item)
 
     return
 

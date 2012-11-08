@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.video.screwattack" version="0.0.1" name="ScrewAttack" provider-name="David Gray (N3MIS15)">
+<addon id="plugin.video.screwattack" version="1.0.1" name="ScrewAttack" provider-name="David Gray (N3MIS15)">
     <requires>
         <import addon="xbmc.python" version="2.0"/>
         <import addon="script.module.beautifulsoup" version="3.0.8"/>
